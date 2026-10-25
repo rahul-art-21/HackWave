@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake News Detector & Conflict Analyser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header matching wireframe -->
+    <header class="header">
+      <h1>Fake News Detector &amp;<br>Conflict Analyser</h1>
+      <div class="underline-accent"></div>
+    </header>
+
+    <!-- Main Input Box from sketch -->
+    <section class="search-box-wrapper">
+      <div class="search-box-label">Enter the news to Search</div>
+      <textarea id="newsText" placeholder="Paste article text, headlines, claims, or rumors here..."></textarea>
+      
+      <div class="attachment-row">
+        <div>
+          <label for="newsImage" class="file-input-label">
+            📷 Upload News Photo
+          </label>
+          <input type="file" id="newsImage" accept="image/*" />
+        </div>
+        <button id="analyzeBtn" class="submit-btn" onclick="runAnalysis()">Analyze Claim</button>
+      </div>
+
+      <div id="imagePreviewContainer" class="image-preview">
+        <img id="previewImg" src="" alt="Selected Preview" />
+        <button class="remove-img-btn" onclick="clearImage()">✕</button>
+      </div>
+    </section>
+
+
+
+
+
+     <section>
+        <div class="box-newspaper">
+            <h1>Analyzed Output</h1>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Informational Guide Points from sketch -->
+    <section class="edu-section">
+      <ul class="edu-list">
+        <li>
+          <span class="bullet">•</span>
+          <div><strong>causes of fake news :</strong> Clickbait monetization, state/political polarization, echo chambers.</div>
+        </li>
+        <li>
+          <span class="bullet">•</span>
+          <div><strong>caution of fake news :</strong> Escalation of civil conflict, societal panic, character defamation.</div>
+        </li>
+        <li>
+          <span class="bullet">•</span>
+          <div><strong>precaution of fake news :</strong> Check primary sources, verify metadata, check cross-outlet corroboration.</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Dedicated Bottom Output Box (Matching Wireframe bottom box) -->
+    <section class="output-screen-box">
+      <div class="output-box-header">
+        <div class="output-box-title">Analysis Output Screen</div>
+        <div id="verdictBadge" class="verdict-tag pending">READY</div>
+      </div>
+
+      <div class="terminal-body">
+        <div id="outputPlaceholder" class="placeholder-msg">
+          &gt; Awaiting news claim input or image submission...
+        </div>
+        <div id="analysisOutput" class="analysis-text" style="display: none;"></div>
+      </div>
+
+      <div class="output-footer">
+        <span id="statusIndicator" class="status-indicator">Idle</span>
+        <span id="wordCountDisplay" class="word-counter">Words: 0 / 30</span>
+      </div>
+    </section>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
